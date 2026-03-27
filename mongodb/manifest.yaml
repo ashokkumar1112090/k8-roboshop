@@ -28,7 +28,7 @@ spec:
       - name: mongodb
         image: ashokdevops123/mongodb:v1
         imagePullPolicy: Always
-        readinessProbe:
+        readinessProbe:           #k8s how will it know it is running or not
           tcpSocket:
             port: 27017
           initialDelaySeconds: 10
