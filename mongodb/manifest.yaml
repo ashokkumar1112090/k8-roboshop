@@ -9,17 +9,17 @@ metadata:
     component: mongodb
     tier: db
 spec:
-  replicas: 1
-  selector:
+  replicas: 1                                #How many pods to run (replicas)
+  selector:                                  #Which pods to manage (selector)
     # these labels are used to select pods
     matchLabels:
       project: roboshop
       component: mongodb
       tier: db
   # pod definition
-  template:
+  template:                               #It creates Pods using that template     
     metadata:
-      labels:
+      labels:                            #Labels inside template MUST match selector
         project: roboshop
         component: mongodb
         tier: db
@@ -45,7 +45,7 @@ metadata:
   name: mongodb
   namespace: roboshop
 spec:
-  selector:
+  selector:               #Which pods to manage (selector)
     project: roboshop
     component: mongodb
     tier: db
